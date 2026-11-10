@@ -1,0 +1,32 @@
+{
+  "llm_tools": {
+    "description": "让 AI 自己记账（函数调用）",
+    "type": "bool",
+    "hint": "开启后把记账/查账/结算/撤销注册成 AI 工具，用户直接说「午饭 68 我先付的」「谁该给谁」就能触发，不必发命令。需要模型支持函数调用（AstrBot 默认开启）",
+    "default": true
+  },
+  "auto_capture": {
+    "description": "自动识别群里的消费消息",
+    "type": "bool",
+    "hint": "开启后，账本成员在群里说「午饭 68 我先付了」会自动记一笔（需先用 aa 加入 加入账本）。怕误记可以关掉，只用 aa 68 午饭 手动记",
+    "default": true
+  },
+  "currency": {
+    "description": "货币符号",
+    "type": "string",
+    "hint": "显示金额时使用的符号，人民币 ¥、美元 $ 等",
+    "default": "¥"
+  },
+  "at_all_on_settle": {
+    "description": "结算时 @所有人",
+    "type": "bool",
+    "hint": "开启后发「aa 结算」会自动 @全体成员，方便催账；不想打扰就关掉",
+    "default": true
+  },
+  "max_bills_display": {
+    "description": "明细最多显示几笔",
+    "type": "int",
+    "hint": "「aa 明细」一次最多列出多少笔账单，避免消息过长被平台截断",
+    "default": 10
+  }
+}

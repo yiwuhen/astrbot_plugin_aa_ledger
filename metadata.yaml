@@ -1,0 +1,40 @@
+name: astrbot_plugin_aa_ledger
+display_name: 群内AA记账
+desc: |
+  群聊 AA 记账助手：一句话记一笔，月底一键算出谁该给谁多少钱。
+
+  - 极低摩擦记账：「aa 68 午饭」，或用中文金额「aa 六十八块 打车」
+  - 自动识别：账本成员在群里说「午饭 68 我先付了」会自动入账，误记可一键撤销
+  - AI 直接调用：注册为 AI 工具（Function Calling），「昨天火锅 258 我付的」「谁该给谁」这类自然语言无需命令即可触发
+  - 精确分摊：金额以「分」为单位整数运算，余数逐分分配，永不分错一分钱
+  - 最小转账结算：贪心算法压缩转账笔数，5 个人吃饭通常 4 笔以内结清
+  - 灵活指定参与人：@某人 只让他分摊，「除@某人」把某人排除在外
+  - 多群隔离：每个群一本独立账本，私聊也能当个人记账用
+  - 数据落在 data/plugin_data/，重装插件不丢账
+version: v0.2.0
+author: WuHen
+repo: https://github.com/yiwuhen/astrbot_plugin_aa_ledger
+category: utilities
+tags:
+  - AA记账
+  - 群账本
+  - 分账
+  - 记账
+  - 聚会
+  - AI工具
+short_desc: 群聊一句话记账，月底一键算清谁欠谁多少
+help: |
+  第一次用先发「aa 加入」把自己加进账本，之后：
+
+  记账：aa 68 午饭（你垫付，全员平摊）
+        aa 68 午饭 @张三 @李四（只让这两人分摊）
+        aa 68 午饭 除@王五（全员里去掉王五）
+  查看：aa（概况）/ aa 明细（流水）
+  结算：aa 结算（谁该给谁多少钱）/ aa 清账（归零，需二次确认）
+  其他：aa 成员 / aa 加入 / aa 退出 / aa 撤销 / aa 归档 / aa 帮助
+
+  开着自动识别时，账本成员在群里说「午饭 68 我先付了」也会自动记一笔。
+support_platforms:
+  - aiocqhttp
+  - qq_official
+astrbot_version: ">=4.5.0"
