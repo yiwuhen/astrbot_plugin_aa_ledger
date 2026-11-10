@@ -14,7 +14,7 @@ desc: |
 version: v0.2.0
 author: WuHen
 repo: https://github.com/yiwuhen/astrbot_plugin_aa_ledger
-category: utilities
+category: 工具
 tags:
   - AA记账
   - 群账本
